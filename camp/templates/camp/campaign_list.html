@@ -1,0 +1,7 @@
+
+
+{% for campaign in object_list %}
+
+<h1><a href="{{campaign.get_absolute_url}}">{{campaign.name}}</a></h1>
+<h3>{{campaign.details}}</h3>
+{% endfor %}
