@@ -1,0 +1,17 @@
+{% load bootstrap4 %}
+{% for campaign in object_list %}
+
+<h1>{{campaign.name}}</h1>
+<form action="" method="post" , class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {%buttons%}
+        <button type="submit" class="btn btn-primary">Edit This Campaign</button>
+    {% endbuttons%}
+</form>
+{% endfor %}
+
+
+<h1>Edit Campaign</h1>
+
+

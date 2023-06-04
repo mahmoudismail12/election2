@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-3^f4yf5!5*b_y5j*$k-$3q-r34%6lri=+p_wly7u9k=0#h)us&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+CORS_ORIGIN_WHITELIST=[
+    "http://127.0.0.1:56694",
+    "http://localhost:56694",
+]
+ALLOWED_HOSTS = ['localhost','127.0.0.1']
 
 
 # Application definition
@@ -38,9 +42,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+   
 
     'camp', 
     'django_summernote',
+    'bootstrap4',
+    'django_filters',
+    'rest_framework',
+
+   # 'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +61,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+   # 'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -80,7 +92,8 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django',
+        'NAME': 'django1',
+        'sql_mode': 'traditional',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '127.0.0.1',

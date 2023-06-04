@@ -1,0 +1,5 @@
+{% for campaign in valid %}
+
+<h1><a href="{%url 'home:vote' campaign.slug%}">{{campaign.name}}</a></h1>
+<h4>{{campaign.details|safe|truncatewords:2}}</h4>
+{% endfor %}

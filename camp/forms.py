@@ -1,10 +1,9 @@
 from django import forms
-from camp.models import Campaign
+from camp.models import Campaign, Nominated
 
 
 
-class CampForm(forms.ModelForm):
+class Currentform(forms.ModelForm):
     class Meta :
         model = Campaign
-        fields = '__all__'
-        
+        fields = ['current']
