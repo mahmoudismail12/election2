@@ -15,6 +15,11 @@ class NominatedSerializer(serializers.ModelSerializer):
         model = Nominated
         fields = "__all__"
 
+class NomUpdateSerializer(serializers.ModelSerializer):
+    class Meta :
+        model = Nominated
+        fields = ['votecount']
+
 class VoterIdSerializer(serializers.ModelSerializer):
     class Meta :
         model = VoterId

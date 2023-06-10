@@ -40,7 +40,7 @@ class Campaign(models.Model):
 
 class VoterId(models.Model):
     campaign = models.ForeignKey(Campaign , related_name="campaign_voterid" , on_delete = models.CASCADE)
-    voterid = models.IntegerField(default=0)
+    voterid = models.IntegerField(default=0,unique=True)
     def __str__(self):
         return str(self.campaign)
     
