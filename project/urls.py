@@ -26,7 +26,7 @@ schema_view = get_swagger_view(title='Pastebin API')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', include('camp.urls',namespace='home')),
+    path('', include('camp.urls',namespace='home')),
 
 
     path('summernote/',include('django_summernote.urls')),
@@ -34,5 +34,6 @@ urlpatterns = [
     path('api_schema/', get_schema_view(title='API Schema',description='Guide for the REST API' ), name='api_schema'),
     path('docs/', TemplateView.as_view(template_name='docs.html', extra_context={'schema_url':'api_schema'}), name='swagger-ui'),
 ]
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

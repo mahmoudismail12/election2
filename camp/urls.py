@@ -18,7 +18,7 @@ urlpatterns = [
     path('api/current' , currentcamp , name='current_api'),
     #nominated api
     path('api/nomlist',nomlist,name='nom_list_api'),
-    path('api/vote/<int:id1>' , apivote , name='api_vote'),
+    path('api/vote/<int:id>' , apivote , name='api_vote'),
     path('api/nomupdate/<int:pk>' , NominatedUpdate.as_view() , name = 'nom_update'),
     #voterid api
     path('api/addvoterid' , AddVoterId.as_view() , name='add_voterid'),
