@@ -1,3 +1,4 @@
+from django import forms
 from rest_framework import serializers
 from .models import Campaign , Nominated  ,VoterId
 from django_filters.rest_framework import  FilterSet
@@ -24,3 +25,4 @@ class VoterIdSerializer(serializers.ModelSerializer):
     class Meta :
         model = VoterId
         fields = "__all__"
+    

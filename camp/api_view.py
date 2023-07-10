@@ -34,11 +34,11 @@ def currentcamp(request):
 class AddVoterId (CreateAPIView):
     serializer_class = VoterIdSerializer
     authentication_classes = (CsrfExemptSessionAuthentication, BasicAuthentication)
-@api_view(['GET'])
-def voteridcheck(request,id):
-    all_ids=VoterId.objects.filter(voterid=id)
-    data = VoterIdSerializer(all_ids, many = True).data
-    return Response({'data':data})
+# @api_view(['GET'])
+# def voteridcheck(request,id):
+#     all_ids=VoterId.objects.filter(voterid=id)
+#     data = VoterIdSerializer(all_ids, many = True).data
+#     return Response({'data':data})
 
 
 

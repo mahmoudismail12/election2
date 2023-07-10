@@ -2,7 +2,7 @@ from django.urls import path
 from .views import  Current
 from . import views
 from django.views.generic import TemplateView
-from .api_view import camplist , nomlist,apivote , NominatedUpdate ,AddVoterId,currentcamp,voteridcheck
+from .api_view import camplist , nomlist,apivote , NominatedUpdate ,AddVoterId,currentcamp#,voteridcheck
 app_name = 'camp'
 
 urlpatterns = [
@@ -22,6 +22,6 @@ urlpatterns = [
     path('api/nomupdate/<int:pk>' , NominatedUpdate.as_view() , name = 'nom_update'),
     #voterid api
     path('api/addvoterid' , AddVoterId.as_view() , name='add_voterid'),
-    path('api/votercheck/<int:id>',voteridcheck,name='voter_id_check'),
+    # path('api/votercheck/<int:id>',voteridcheck,name='voter_id_check'),
 
 ]   
